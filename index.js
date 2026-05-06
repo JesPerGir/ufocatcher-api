@@ -20,7 +20,7 @@ app.use(express.json()); // Prepara al servidor para que entienda datos en forma
 // Configura el limitador
 const authLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutos
-    max: 5, // Limita cada IP a 5 peticiones por ventana de 15 minutos
+    max: 100, // Limita cada IP a 5 peticiones por ventana de 15 minutos
     message: { error: "Demasiados intentos. Los sistemas de la nave están bloqueados temporalmente. Inténtalo en 15 minutos." },
     standardHeaders: true,
     legacyHeaders: false,
